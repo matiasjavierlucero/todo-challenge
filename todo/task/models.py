@@ -13,4 +13,4 @@ class Task(models.Model):
     description = models.TextField()
     status = models.IntegerField(
         default=STATUS_CHOICES.todo, null=False, blank=False, choices=STATUS_CHOICES)
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateField(auto_now_add=True)

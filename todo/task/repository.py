@@ -6,10 +6,11 @@ from .models import Task
 
 
 class TaskRepository:
+    """Repository for tasks."""
+
     def list(self):
         return Task.objects.all()
 
-    
     def create(self, title: str, description: str, status: int):
         return Task.objects.create(
             title=title, description=description, status=status
@@ -17,13 +18,13 @@ class TaskRepository:
 
     def detail(self, id):
         return get_object_or_404(Task, pk=id)
-    
+
     def update(self, request, id):
         task = get_object_or_404(Task, pk=id)
         task.status = request.data.get('status')
         task.save()
         return task
-  
+
     def destroy(self, pk=None):
         task = Task.objects.get(id=pk)
         task.delete()

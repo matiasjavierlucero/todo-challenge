@@ -9,13 +9,12 @@ from .repository import TaskRepository
 
 class TaskSerializer(serializers.ModelSerializer):
     status = serializers.ChoiceField(
-        choices=[(0, 'todo'), (1, 'in_progress'),(2, 'complete'),]
+        choices=[(0, 'todo'), (1, 'in_progress'), (2, 'complete'), ]
     )
 
     class Meta:
         model = Task
-        fields = ["id", "title", "description", "status"]
-
+        fields = ["id", "title", "description", "status", "created"]
 
     def create(self, validated_data):
         task_repository = TaskRepository()

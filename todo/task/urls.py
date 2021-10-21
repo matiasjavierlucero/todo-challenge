@@ -3,7 +3,7 @@ from rest_framework import routers
 from rest_framework.schemas import get_schema_view
 from .views import TaskViewSet
 
-app_name = 'api'
+app_name = 'tasks'
 schema_view = get_schema_view(title='Todo Task', urlconf='task.urls')
 
 router = routers.DefaultRouter()
