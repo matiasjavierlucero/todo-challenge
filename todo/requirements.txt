@@ -1,0 +1,5 @@
+Django==2.2
+psycopg2-binary==2.8.6
+djangorestframework==3.12.4
+pytest-django==4.4.0
+django-model-utils
